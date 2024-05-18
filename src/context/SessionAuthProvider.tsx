@@ -1,14 +1,17 @@
 "use client";
 
-import { SessionProvider } from "next-auth/react";
+import Navbar from "@/components/Navbar";
+import { SessionProvider, useSession } from "next-auth/react";
 
-interface Props {
+export interface Props {
   children: React.ReactNode;
 }
 
 const SessionAuthProvider = ({ children }: Props) => {
+
   return (
     <SessionProvider>
+      <Navbar />
       {children}
     </SessionProvider>
   )

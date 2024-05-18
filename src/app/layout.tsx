@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import SessionAuthProvider from "@/context/SessionAuthProvider";
-import Navbar from "@/components/Navbar";
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -20,9 +17,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="container">
+        <main className="bg-[#f8f8f2] w-full min-h-screen">
           <SessionAuthProvider>
-            <Navbar />
             {children}
           </SessionAuthProvider>
         </main>

@@ -1,11 +1,10 @@
-import ButtonAuth from '@/components/ButtonAuth'
 import React from 'react'
 
 const HomePage = () => {
   return (
-    <div>
-      <h1>Home Pages</h1>
-      <ButtonAuth />
+    <div className='pt-5 pl-16 text-xl'>
+      <h1>Logo</h1>
+
     </div>
   )
 }

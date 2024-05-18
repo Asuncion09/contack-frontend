@@ -52,50 +52,66 @@ const RegisterPage = () => {
   };
 
   return (
-    <div>
-      <h1>Register</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="test"
-          name="name"
-          className="form-control mb-2"
-          value={name}
-          onChange={(event) => setName(event.target.value)}
-        />
-        <input
-          type="email"
-          placeholder="test@test.com"
-          name="email"
-          className="form-control mb-2"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="123123"
-          name="password"
-          className="form-control mb-2"
-          value={password}
-          onChange={(event) => setPassword(event.target.value)}
-        />
-        <button
-          type="submit"
-          className="btn btn-primary"
-        >
-          Register
-        </button>
-      </form>
+    <div className="h-screen items-center w-screen justify-center flex">
+      <div className="h-[60%] mt-[-60px] w-2/5 grid shadow-xl rounded-xl">
+        <form onSubmit={handleSubmit}>
+          <div className="grid col-auto px-auto py-3 bg-[#d6acff] rounded-t-xl text-xl font-semibold text-[#282a36] text-center">
+            <h1>Register</h1>
+          </div>
 
-      {errors.length > 0 && (
-        <div className="alert alert-danger mt-2">
-          <ul className="mb-0">
-            {errors.map((error) => (
-              <li key={error}>{error}</li>
-            ))}
-          </ul>
-        </div>
-      )}
+          <div className="grid col-auto">
+            <label >Nombre:</label>
+            <input
+              type="text"
+              placeholder="test"
+              name="name"
+              className="form-control mb-2"
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+            />
+          </div>
+
+          <div className="grid col-auto">
+            <label >Correo:</label>
+            <input
+              type="email"
+              placeholder="test@test.com"
+              name="email"
+              className="form-control mb-2"
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+            />
+          </div>
+
+          <div className="grid col-auto">
+            <label>Contraseña</label>
+            <input
+              type="password"
+              placeholder="123123"
+              name="password"
+              className="form-control mb-2"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="p-2 rounded-lg bg-[#69ff94]"
+          >
+            Register
+          </button>
+        </form>
+        {errors.length > 0 && (
+          <div className="alert alert-danger mt-2">
+            <ul className="mb-0">
+              {errors.map((error) => (
+                <li key={error}>{error}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

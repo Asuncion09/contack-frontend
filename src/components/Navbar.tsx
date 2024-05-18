@@ -2,45 +2,47 @@
 
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
+import { HiMiniHome } from "react-icons/hi2";
 
 const Navbar = () => {
   const { data: session } = useSession();
 
   return (
-    <nav className="navbar navbar-dark bg-dark">
-      <div className="container">
+    <nav className="w-screen flex justify-center pt-4">
+      <div className="bg-[#d6acff] w-[60%]  p-2.5 rounded-lg h-13 shadow content-end">
         <Link
           href="/"
-          className="btn btn-primary btn-sm"
+          className=" p-1 text-[#282a36] rounded-lg decoration-solid mx-1 float-left"
         >
-          Home
+          <HiMiniHome className="text-2xl" />
         </Link>
         {session?.user ? (
           <>
-            <Link
-              href="/dashboard"
-              className="btn btn-primary btn-sm"
-            >
-              Dashboard
-            </Link>
             <button
               onClick={() => signOut()}
-              className="btn btn-danger btn-sm"
+              className="py-1 px-1.5 bg-[#ff6e6e] text-[#282a36] rounded-lg decoration-solid mx-1 float-right"
             >
-              Signout
+              salir
             </button>
+            <Link
+              href="/"
+              className="py-1 px-1.5 bg-[#69ff94] text-[#282a36] rounded-lg decoration-solid mx-1 float-right"
+            >
+              Añadir
+            </Link>
+
           </>
         ) : (
           <>
             <Link
               href="/login"
-              className="btn btn-primary btn-sm"
+              className="py-1 px-1.5 bg-[#69ff94] text-[#282a36] rounded-lg decoration-solid mx-1 float-right"
             >
               Login
             </Link>
             <Link
               href="/register"
-              className="btn btn-primary btn-sm"
+              className="py-1 px-1.5 bg-[#69ff94] text-[#282a36] rounded-lg decoration-solid mx-1 float-right"
             >
               Register
             </Link>
